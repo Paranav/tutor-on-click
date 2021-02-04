@@ -112,4 +112,8 @@ export class TeacherService {
     let url = "http://localhost:8080/teacherCourse/" + teacherId + "/" + courseName;
     return this._http.get(url);
   }
+
+loggedIn(){
+    return !!(localStorage.getItem("user") && <string>localStorage.getItem("role")== "TEACHER");
+  }
 }

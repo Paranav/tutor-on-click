@@ -20,7 +20,8 @@ export class NavBarComponent implements OnInit {
   }
  
   logOut(){
-    localStorage.removeItem("user")
+    localStorage.removeItem("user");
+    localStorage.removeItem("role");
     this.router.navigate(["/dashboard"])
   }
 

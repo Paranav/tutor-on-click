@@ -41,4 +41,9 @@ export class AdminService {
       let url = "http://localhost:8080/studentTeacher/list";
       return this.http.get(url);
     }
+
+// admin loging
+loggedIn(){
+  return !!(localStorage.getItem("user") && <string>localStorage.getItem("role")== "ADMIN");
+}
 }

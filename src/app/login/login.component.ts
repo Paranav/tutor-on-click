@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   user: any;
+  loginErrorMessage: any;
   constructor(
     private _userService: UserService,
     private router: Router
@@ -46,6 +47,9 @@ export class LoginComponent implements OnInit {
             }
           }
         }
+      },(error)=>{
+          this.loginErrorMessage = error;
+          console.log(error);
       });
 
   }

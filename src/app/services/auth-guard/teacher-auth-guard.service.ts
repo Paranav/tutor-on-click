@@ -1,27 +1,26 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router} from '@angular/router';
-import { UserService } from './user.service';
-
+import { CanActivate, Router } from '@angular/router';
+import { AdminService } from '../admin.service';
+import { TeacherService } from '../teacher.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
-   
-  
-   constructor(
-    private _userService: UserService,
+export class TeacherAuthGuardService implements CanActivate {
+
+  constructor(
+    private _teacherService: TeacherService,
     private router: Router
   ) { }
   canActivate() {
     var role;
     role = <string>localStorage.getItem("role");
-    if (this._userService.loggedIn()) {
+    if (this._teacherService.loggedIn()) {
       return true;
     }
     else if (!!role) {
-      if (role == "TEACHER") {
-        this.router.navigate(["/teacher"]);    
+      if (role == "STUDENT") {
+        this.router.navigate(["/user"]);    
       }
       else if (role == "ADMIN") {
         this.router.navigate(["/admin"]);
@@ -29,11 +28,8 @@ export class AuthGuard implements CanActivate {
       return false;
     }
     else {
-      console.log("inside user else control block")
       this.router.navigate(["/login"]);
       return false;
     }
   }
-  
-  
 }

@@ -58,6 +58,6 @@ export class UserService {
 
   // to check wether user is loggedIn or Not
   loggedIn(){
-    return !!localStorage.getItem("user");
+    return !!(localStorage.getItem("user") && <string>localStorage.getItem("role")== "STUDENT");
   }
 }
