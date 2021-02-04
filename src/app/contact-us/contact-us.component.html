@@ -1,0 +1,47 @@
+<app-nav-bar></app-nav-bar>
+<div class="row" style="height: 500px;">
+    <div class="col-md-6 border" style="background-color: cadetblue;">
+        <div class="container border pt-5" style="margin-top: 76px; background-color: rgb(146, 87, 200); box-shadow: rgba(0, 0, 0, 0.5); width: 700px;">
+    <form #messageData="ngForm" (ngSubmit)="onSubmit(messageData)">
+        <div class="row mb-3">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-6">
+                <input type="text" name="name" id="name" class="form-control" ngModel>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-6">
+                <input type="text" name="email" id="email" class="form-control" ngModel>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-6">
+                <input type="password" name="password" id="password" class="form-control" ngModel>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="subject" class="col-sm-2 col-form-label">Subject</label>
+            <div class="col-sm-6">
+                <input type="text" name="subject" id="subject" class="form-control" ngModel>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="body">Enter Message</label>
+            <div class="col-10 offset-md-1">
+                <textarea class="form-control" id="body" name="body" ngModel></textarea>
+            </div>
+        </div>
+        <div class="row mb-3" >
+            <input style="width: fit-content;" type="submit" value="Send" class="btn btn-danger">
+        </div>
+    </form>
+</div>
+</div>
+    <div class="col-md-6 border" style="background-color: darkcyan;">somethis</div>
+
+</div>
+<app-footer></app-footer>

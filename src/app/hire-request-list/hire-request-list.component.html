@@ -1,0 +1,10 @@
+<!-- child component of admin component -->
+
+<ul *ngIf="studentTeacher">
+    <li *ngFor="let item of studentTeacher">
+        <span>Job_id: {{item.id}} </span><br>
+        <span>Student: {{item.student.studentName}} </span><br>
+        <span>TeacherCourseId: {{item.teacherCourse.id}}</span><br>
+        <button (click)="conformStatus(item.id)"></button>
+    </li>
+</ul>

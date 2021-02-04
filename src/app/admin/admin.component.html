@@ -1,0 +1,12 @@
+<!-- navigation bar -->
+<app-nav-bar></app-nav-bar>
+
+<!-- it will show request from student to hire teacher -->
+<button (click)="hireRequest()">notification</button>
+<app-hire-request-list *ngIf="showHireRequest"></app-hire-request-list>
+
+<!-- whenever teacher register himself request will show here to verified him as teacher -->
+<button (click)="newApplication()">New Application</button>
+<app-job-applications *ngIf="showApplications"></app-job-applications>
+
+<app-footer></app-footer>

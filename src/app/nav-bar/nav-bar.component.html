@@ -1,0 +1,64 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">TutorSearch</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a  style="margin-left: 30px"class="nav-link active" aria-current="page" href="http://localhost:4200/dashboard">Home</a>
+          </li>
+          <li class="nav-item"> -->
+          <!-- =================================== -->
+             <!-- <div>
+               <h6 class="contactUs" (click)="contactUs()">contact us</h6>
+             </div> -->
+            <!-- ============================================ -->
+          <!-- </li>
+        </ul>
+      <div class="nav-item"style="margin-right: 15px">
+        <a *ngIf="!loggedIn" href="http://localhost:4200/login" class="btn btn-default">Login</a>
+        <a *ngIf="loggedIn" (click)="logOut()" class="btn btn-default">Logout</a>   
+      </div>
+      </div>
+    </div>
+  </nav> -->
+<!-- </body>
+</html> -->
+
+<div class="container pt-4">
+  <nav class="navbar navbar-light navbar-toggleable-sm navbar-static-top text-uppercase app-navbar mb-5">
+    <button
+      class="navbar-toggler navbar-toggler-right hidden-md-up"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarResponsive"
+      aria-controls="navbarResponsive"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand mr-auto" href="../">
+      <span>EduDatas</span>
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="http://localhost:4200/dashboard">Home</a>
+        </li>
+        <li class="nav-item active" *ngIf="!loggedIn">
+          <a class="nav-link" href="http://localhost:4200/login">Login</a>
+        </li>
+        <li class="nav-item " *ngIf="loggedIn">
+          <a class="nav-link" (click)="logOut()">Logout</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" (click)="contactUs()">Contact Us</a>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+</nav>
+</div>

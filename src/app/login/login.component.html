@@ -1,0 +1,47 @@
+<app-nav-bar></app-nav-bar>
+<div style="background-color: blanchedalmond; height: 600px;">
+<div class="row mb-3" >
+    <div class="col-md-7"></div>
+    <div class="col-md-5 col-md-offset-5">
+
+        <!-- loginForm -->
+
+        <div class="box">
+            <div class="container">
+                <div class="row">
+                    <div style="text-align: center;">
+                        <h2>Login</h2>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+                <div class="row-mb-3">
+                    <label for="email" class="col-sm-2 offset-md-3 col-form-label">Email</label>
+                    <div class="col-sm-6 offset-md-3" >
+                        <input type="text" class="form-control" name="email" id="email" placeholder="example@gmail.com"
+                            ngModel>
+                    </div>
+                </div>
+                <div class="row-mb-3">
+                    <label for="password" class="col-sm-2 offset-md-3 col-form-label">Passowrd</label>
+                    <div class="col-sm-6 offset-md-3">
+                        <input type="password" class="form-control" name="password" id="password" placeholder="********"
+                            ngModel>
+                    </div>
+                </div>
+                <br>
+                <div style="text-align: center;">
+                    <!-- <div class="col-sm-3 col-offset-3"> -->
+                        <input type="submit" value="Login" class="btn btn-danger">
+                    <!-- </div> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- footer -->
+
+<app-footer></app-footer>

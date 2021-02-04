@@ -1,0 +1,64 @@
+<app-nav-bar></app-nav-bar>
+<div class="container border" style="margin-top: 50px ;">
+      <div class="row" >
+          <div class="col-sm-4">
+              <div *ngIf="imageData">
+                  <img [src]="imageData" height="260px" width="260px" style="border-radius: 130px;" >
+              </div>
+              <div *ngIf="teacher" class="box">
+                 <h3>Id: {{teacher[0].id}}</h3><h3>{{teacher[0].teacherName}}</h3>
+                 <h3>Per Hour Fee: {{teacher[0].perHourFees}}</h3>
+                 <h3>Current Rating: {{teacher[0].rate}}</h3>
+                 <h3>Joining Date: {{teacher[0].joiningDate}}</h3>
+              </div>
+            </div>
+          <div class="col-sm-8">
+            <div *ngIf="teacher[0].status; else elseBlock">
+                <div class="row" style="background-color:rgba(70, 195, 195, 0.863);">
+                  <div class="col-sm-6" style="justify-content: center; border-right: 1px solid black;">
+                    <button (click)="studentList()"
+                      style="border: none; background-color: transparent;  font-family : 'Roboto Mono', monospace; font-size: x-large;">Student List
+                      </button>
+                  </div>
+                  <div class="col-sm-6">
+                    <button (click)="studentListNewJob()"
+                      style="border: none; background-color: transparent; font-family : 'Roboto Mono', monospace; font-size: x-large;">
+                      New Job</button>
+                  </div>
+                </div>
+
+                <!-- student list -->
+                <div style="height: 560px; display: flex;  margin-top: 70px;" *ngIf="students && showStudentList">
+                  <table class="table">
+                  <h2>Student List</h2>
+                      <tbody>
+                          <tr *ngFor="let item of students">
+                        <td>{{item.studentName}}</td>
+                        <td>{{item.dob}}</td>
+                        <td>{{item.email}}</td>
+                        <td><button (click)="studentDetail(item.id)">Detail</button></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- new Job  -->
+                  <div style="height: 560px; display: flex;  margin-top: 70px;" *ngIf="newJob && showNewJob">
+                    <table class="table">
+                    <h2>Student List</h2>
+                        <tbody>
+                            <tr *ngFor="let item of newJob">
+                          <td>{{item.studentName}}</td>
+                          <td>{{item.dob}}</td>
+                          <td>{{item.email}}</td>
+                          <td><button (click)="studentDetail(item.id)">Detail</button></td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+            </div>
+            <ng-template #elseBlock>Not comfirmed yet</ng-template>
+          </div>
+      </div>
+  </div>
+  <app-footer></app-footer>

@@ -1,0 +1,12 @@
+<!-- child component of student Detail -->
+<p>hired-teacher-list works!</p>
+
+<ul>
+
+    <li *ngFor="let item of teachers">
+        <span>{{item.teacherName}}</span>
+        <button (click)="removeTeacher(item.id)">Remove</button>
+    </li>
+</ul>
+
+<button (click)="getfrestList()">Refresh</button>

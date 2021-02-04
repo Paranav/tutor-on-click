@@ -1,0 +1,9 @@
+<p>teacher-list works!</p>
+
+<ul *ngIf="teachers">
+    <li *ngFor="let item of teachers">
+        <span>{{item.teacherName}}</span>
+        <button (click)="showTeacherDetail(item.id)">Detail</button>
+    </li>
+
+</ul>

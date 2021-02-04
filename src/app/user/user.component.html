@@ -1,0 +1,45 @@
+<!-- navigation bar -->
+
+<app-nav-bar></app-nav-bar>
+
+<!-- body -->
+
+
+<div style="height: 580px; background-color: rgba(255, 255, 255, 0.863); ">
+  <div class="row justify-content-md-center">
+
+    <!-- profile Section  -->
+    <div class="col-sm-4" style="border-right: 2px solid black;">
+      <div *ngIf="imageData">
+        <img [src]="imageData" height="200px" width="200px" style="border-radius: 130px;">
+      </div>
+      <div *ngIf="user" style="justify-content: center; align-items: center; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 20px; margin-left: 10px;">
+        <h3>ID: {{user.id}}</h3>
+        <h3>{{user.name}}</h3>
+      </div>
+    </div>
+
+    <!-- detail seciton -->
+    <div class="col-sm-8">
+      <div style="height: 530px;">
+      <!-- <button (click)="toggleSS()">StudentSection</button>
+  <div *ngIf="showStudentSection"> -->
+      <div class="row" style="background-color:rgba(70, 195, 195, 0.863);">
+        <div class="col-sm-6" style="justify-content: center; border-right: 1px solid black;">
+          <button (click)="addStudent()"
+            style="border: none; background-color: transparent;  font-family : 'Roboto Mono', monospace; font-size: x-large;">Add
+            Student</button>
+        </div>
+        <div class="col-sm-6">
+          <button (click)="getStudentList()"
+            style="border: none; background-color: transparent; font-family : 'Roboto Mono', monospace; font-size: x-large;">Student
+            List</button>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

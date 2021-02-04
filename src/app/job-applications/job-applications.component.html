@@ -1,0 +1,19 @@
+ <!-- this is child component of student Detail component -->
+<p>job-applications works!</p>
+
+<ul *ngIf="teachers">
+    <li *ngFor="let item of teachers">
+        <span>{{item.teacherName}}</span>
+        <button (click)="confirmStatus(item.id)">hire</button>
+        <button (click)="reject(item.id)">reject</button>
+    </li>
+</ul>
+
+<ul *ngIf="teacherCourse">
+    <li>
+        <span>Name: {{teacherCourse.teacher.teacherName}}</span>
+        <span>Ragistered Course:{{teacherCourse.course.courseName}}</span>
+        <button (click)=" confirmTeacherCourseStatus(teacherCourse.id)">hire</button>
+        <button (click)="rejectTeacherCourse(teacherCourse.id)">reject</button>
+    </li>
+</ul>

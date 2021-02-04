@@ -1,0 +1,40 @@
+<div class="jumbotron" *ngIf="student">
+    <h3 class="display-4">{{student.studentName}}</h3>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col-6">
+            <a class="btn btn-info btn-sm" (click)="HiredTeacher()" role="button">All Subscribed Teacher</a>
+        </div>
+        <div class="col-6">
+            <form #formref="ngForm" (ngSubmit)="getTeachers(formref)">
+                <!-- searche teacher by entering subject name -->
+                <!-- === here we can dynamically fech the subjects  and show to user ot restrict them entring out of scope subj -->
+                Enter your subject:
+                <input type="text" name="subject" ngModel>
+                <input type="submit" value="Serach">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- card to show the teachers -->
+<div *ngIf="showTeacherList">
+    <div class="card w-75" *ngFor="let item of teachers">
+        <div class="card-body">
+            <h5 class="card-title">{{item.teacherName}}</h5>
+            <b>Id:</b> {{item.id}} <b>Age:</b> {{item.age}} <b>Gender:</b> {{item.gender}}<br>
+            Experience : {{item.expYear}} years
+            Rating : {{item.rate}}
+            perHourFees : {{item.perHourFees}}
+            <a (click)="hireTeacher(item.id)" class="btn btn-primary">Subscribe</a>
+        </div>
+    </div>
+</div>
+
+<!-- child component hired Teacher List for the student -->
+<div *ngIf="showHiredTeacher">
+    <div *ngIf="student">
+        <app-hired-teacher-list [studentId]="student.id"></app-hired-teacher-list>
+    </div>
+</div>

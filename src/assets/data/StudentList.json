@@ -1,0 +1,22 @@
+[
+    {
+        "id":"1",
+        "name":"Paranav kumar chaudhary",
+        "email":"kparanav@gmail.com",
+        "password":"paranav"
+    },
+
+    {
+        "id":"2",
+        "name":"Wasim Ali",
+        "email":"wasim@gmail.com",
+        "password":"wasim"
+    },
+
+    {
+        "id":"3",
+        "name":"ankush",
+        "email":"ankush@gmail.com",
+        "password":"ankush"
+    }
+]
