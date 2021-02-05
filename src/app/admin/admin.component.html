@@ -2,11 +2,28 @@
 <app-nav-bar></app-nav-bar>
 
 <!-- it will show request from student to hire teacher -->
-<button (click)="hireRequest()">notification</button>
-<app-hire-request-list *ngIf="showHireRequest"></app-hire-request-list>
+<!-- <button (click)="hireRequest()">notification</button>
+<app-hire-request-list *ngIf="showHireRequest"></app-hire-request-list> -->
 
 <!-- whenever teacher register himself request will show here to verified him as teacher -->
-<button (click)="newApplication()">New Application</button>
-<app-job-applications *ngIf="showApplications"></app-job-applications>
+<!-- <button (click)="newApplication()">New Application</button>
+<app-job-applications *ngIf="showApplications"></app-job-applications> -->
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a (click)="hireRequest()" class="nav-link active" id="notification-tab" data-bs-toggle="tab" role="tab" aria-controls="notification" aria-selected="true">notification</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a (click)="newApplication()" class="nav-link" id="newApplication-tab" data-bs-toggle="tab" role="tab" aria-controls="newApplication" aria-selected="false">New Application</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="notification" role="tabpanel" aria-labelledby="notification-tab">
+        <app-hire-request-list *ngIf="showHireRequest"></app-hire-request-list>
+    </div>
+    <div class="tab-pane fade" id="newApplication" role="tabpanel" aria-labelledby="newApplication-tab">
+        <app-job-applications *ngIf="showApplications"></app-job-applications>
+    </div>
+  </div>
 
 <app-footer></app-footer>
