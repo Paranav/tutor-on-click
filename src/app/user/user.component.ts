@@ -13,6 +13,7 @@ export class UserComponent implements OnInit {
   // user data from login component query param
   user: any;
   imageData: any;
+  defaultImg:any = "D:/CDAC/CDACProjectAngular/src/assets/img/childish.jpg";
   showStudentSection: boolean = false;
   showTeacherSection: boolean = false;
   constructor(

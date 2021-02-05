@@ -11,11 +11,11 @@
     <!-- profile Section  -->
     <div class="col-sm-4" style="border-right: 2px solid black;">
       <div *ngIf="imageData">
-        <img [src]="imageData" height="200px" width="200px" style="border-radius: 130px;">
+        <img [src]="imageData" height="200px" width="200px" style="border-radius: 130px; margin-left: 20px;">
       </div>
-      <div *ngIf="user" style="justify-content: center; align-items: center; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-top: 20px; margin-left: 10px;">
-        <h3>ID: {{user.id}}</h3>
-        <h3>{{user.name}}</h3>
+      <div *ngIf="user" style="justify-content: center; align-items: center; margin-top: 20px; margin-left: 30px;">
+        <h4>ID: {{user.id}}</h4>
+        <h4>Username:{{user.name}}</h4>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
       <div style="height: 530px;">
       <!-- <button (click)="toggleSS()">StudentSection</button>
   <div *ngIf="showStudentSection"> -->
-      <div class="row" style="background-color:rgba(70, 195, 195, 0.863);">
+      <!-- <div class="row" style="background-color:rgba(70, 195, 195, 0.863);">
         <div class="col-sm-6" style="justify-content: center; border-right: 1px solid black;">
           <button (click)="addStudent()"
             style="border: none; background-color: transparent;  font-family : 'Roboto Mono', monospace; font-size: x-large;">Add
@@ -35,7 +35,16 @@
             style="border: none; background-color: transparent; font-family : 'Roboto Mono', monospace; font-size: x-large;">Student
             List</button>
         </div>
-      </div>
+      </div> -->
+
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a (click)="addStudent()" class="nav-link" routerLinkActive="active" id="addStudent" data-bs-toggle="tab" role="tab" aria-controls="addStudent" aria-selected="true" style="cursor: pointer;">Add Student</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a (click)="getStudentList()" class="nav-link" routerLinkActive="active" id="getStudentList" data-bs-toggle="tab" role="tab" aria-controls="getStudentList" aria-selected="false" style="cursor: pointer;">Student List</a>
+        </li>
+      </ul>
       <router-outlet></router-outlet>
     </div>
   </div>
