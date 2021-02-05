@@ -10,6 +10,7 @@ export class HireRequestListComponent implements OnInit {
 
   // it containe list which student requested for which teacher
   studentTeacher:any;
+  noOfStudentTeacher:number =0;
   constructor(
     private _adminService: AdminService
   ) { }
@@ -17,6 +18,7 @@ export class HireRequestListComponent implements OnInit {
     this._adminService.getAllNewStudentTeacher().subscribe(data=>{this.studentTeacher = data
       console.log(data)
     });
+    this.noOfStudentTeacher =  this.studentTeacher.length;
   }
 
   // admin will confirm the requested pair of student and teacher

@@ -1,6 +1,7 @@
 <!-- child component of admin component -->
 
 <ul *ngIf="studentTeacher">
+    <span *ngIf="noOfStudentTeacher < 1">No notifications</span>
     <li *ngFor="let item of studentTeacher">
         <span>Job_id: {{item.id}} </span><br>
         <span>Student: {{item.student.studentName}} </span><br>

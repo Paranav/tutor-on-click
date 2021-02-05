@@ -22,6 +22,7 @@ showApplications:boolean = false;
   hireRequest(){
     if(this.showHireRequest === false){
       this.showHireRequest = true;
+      this.showApplications= false;
     }
     else {
       this.showHireRequest = false;
@@ -30,6 +31,7 @@ showApplications:boolean = false;
   newApplication(){
     if(this.showApplications === false){
       this.showApplications = true;
+      this.showHireRequest = false;
     }
     else {
       this.showApplications = false;
