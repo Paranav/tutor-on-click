@@ -1,67 +1,75 @@
 <!-- this component is basically child component of register component  -->
 
-<form #teacherData="ngForm" (ngSubmit)="onSubmit(teacherData)">
+<!-- <form #teacherData="ngForm" (ngSubmit)="onSubmit(teacherData)">
   <div class="row mb-3">
     <label for="age" class="col-sm-2 col-form-label">Age</label>
     <div class="col-sm-10">
-      <input type="text" name="age" id="age" class="form-control" ngModel>
+      <input type="text" name="age" id="age" class="form-control" ngModel required #age="ngModel">
+      <span class="help-block" *ngIf="!age.valid && age.touched">Please enter your age</span>
     </div>
   </div>
   <div class="row mb-3">
     <label for="expYear" class="col-sm-2 col-form-label">ExpYear</label>
     <div class="col-sm-10">
-      <input type="text" name="expYear" id="expYear" class="form-control" ngModel>
+      <input type="text" name="expYear" id="expYear" class="form-control" ngModel required #expYear="ngModel">
+      <span class="help-block" *ngIf="!expYear.valid && expYear.touched">Please enter your years of experience</span>
     </div>
-  </div>
+  </div> -->
 
 
 
   <!-- <Address></Address> -->
-  <div class="row mb-3">
+  <!-- <div class="row mb-3">
     <label for="address" class="col-sm-2">Address</label>
     <div class="col-sm-10" id="address">
       <div class="col-sm-5">
         <label for="city" class="col-sm-2 col-form-label">City</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="city" name="city" ngModel>
+          <input type="text" class="form-control" id="city" name="city" ngModel required #city="ngModel">
+          <span class="help-block" *ngIf="!city.valid && city.touched">Please enter your city</span>
+
         </div>
       </div>
       <div class="col-sm-5">
         <label for="state" class="col-sm-2 col-form-label">State</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" name="state" id="state" ngModel>
+          <input type="text" class="form-control" name="state" id="state" ngModel required #state="ngModel">
+          <span class="help-block" *ngIf="!state.valid && state.touched">Please enter your full name</span>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- phone -->
-  <div class="row mb-3">
+  <!-- <div class="row mb-3">
     <label for="phone" class="col-sm-2 col-form-label">Phone no</label>
     <div class="col-sm-10">
-      <input type="text" name="phone" id="phone" class="form-control" ngModel>
+      <input type="text" name="phone" id="phone" class="form-control" ngModel required #phone="ngModel">
+      <span class="help-block" *ngIf="!phone.valid && phone.touched">Please enter your phone number</span>
     </div>
-  </div>
+  </div> -->
 
 <!-- course -->
 
-  <div class="row mb-3">
+  <!-- <div class="row mb-3">
     <label for="course" class="col-sm-2 col-form-label">Course</label>
     <div class="col-sm-10">
-        <select class="form-select" name="courseId" ngModel id=course aria-label="Default select example">
+        <select class="form-select" name="courseId" ngModel id=course aria-label="Default select example" required #courseId="ngModel">
             <option selected>select</option>
             <option *ngFor="let item of courses" value="{{item.id}}" >{{item.courseName}}</option>
         </select>
+        <span class="help-block" *ngIf="!courseId.valid && courseId.touched">Please enter your course Id</span>
     </div>
-</div>
+</div> -->
 
 
 <!-- resume -->
-<div class="row mb-3">
+<!-- <div class="row mb-3">
   <label for="resume" class="col-sm-2 col-form-label">Resume</label>
   <div class="col-sm-10">
-    <input type="file" (change)="onFileChanged($event)" name="resume" id="resume" class="form-control" ngModel>
+    <input type="file" (change)="onFileChanged($event)" name="resume" id="resume" class="form-control" ngModel required #resume="ngModel">
+    <span class="help-block" *ngIf="!resume.valid && resume.touched">Please add your resume</span>
   </div>
 </div>
 
@@ -71,4 +79,53 @@
 </div>
 </div>
 
-</form>
+</form> -->
+
+<div class="col-lg-6">
+  <form #teacherData="ngForm" (ngSubmit)="onSubmit(teacherData)" class="needs-validation" novalidate>
+  
+      <div class="form-group">
+        <input type="text" name="age" id="age" class="form-control" placeholder="Enter your age" ngModel required #age="ngModel">
+        <span class="help-block" *ngIf="!age.valid && age.touched">Please enter your age</span>
+      </div>
+      
+      <div class="form-group">
+        <input type="text" name="expYear" id="expYear" class="form-control" placeholder="Enter your years of experience" ngModel required #expYear="ngModel">
+        <span class="help-block" *ngIf="!expYear.valid && expYear.touched">Please enter your years of experience</span>
+      </div>
+   
+    <div class="form-group">
+      <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" ngModel required #city="ngModel">
+      <span class="help-block" *ngIf="!city.valid && city.touched">Please enter your city</span>
+     
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="state" id="state" placeholder="Enter state" ngModel required #state="ngModel">
+          <span class="help-block" *ngIf="!state.valid && state.touched">Please enter your state</span>
+    </div>
+    <div class="form-group">
+      <input type="text" name="phone" id="phone" class="form-control" placeholder="Enter phone number" ngModel required #phone="ngModel">
+      <span class="help-block" *ngIf="!phone.valid && phone.touched">Please enter your phone number</span>
+    </div>
+    <div class="form-group">
+      <select class="form-select form-select-md" name="courseId" ngModel id=course required #courseId="ngModel">
+        <option value="" selected>select your course</option>
+        <option *ngFor="let item of courses" value="{{item.id}}" >{{item.courseName}}</option>
+        </select>
+        <span class="help-block" *ngIf="!courseId.valid && courseId.touched">Please select your course</span>
+    </div>
+   
+    <div class="row form-group">
+      <div class="col-md-6" >
+          <label for="resume" >Upload your Resume</label>
+      </div>
+     
+      <div class="col-md-6">
+        <input type="file" (change)="onFileChanged($event)" name="resume" id="resume" class="form-control" ngModel required #resume="ngModel">
+        <span class="help-block" *ngIf="!resume.valid && resume.touched">Please add your resume</span>
+      </div>
+  </div>   
+    
+    <div class="text-center"><button [disabled]="!teacherData.valid" type="submit" class="btn btn-primary">Submit</button></div>
+  </form>
+</div>

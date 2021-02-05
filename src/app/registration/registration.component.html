@@ -15,8 +15,8 @@
 
     <!-- registration form  -->
     
-    <div class="box1">
-        <table class="table table-striped">
+    <div class="container">
+        <table class="table ">
             <thead>
                 <tr>
                     <th scope="col">
@@ -26,7 +26,7 @@
             </thead>
             <tbody>
                 <tr *ngIf="showUserForm">
-                    <div>
+                    <!-- <div>
                         <form #registerMap="ngForm" (ngSubmit)="collectUserData(registerMap)">
 
                             <div class="row mb-3">
@@ -99,7 +99,64 @@
                             
                             <button [disabled]="!registerMap.valid" type="submit" class="btn btn-primary">Register</button>
                         </form>
-                    </div>
+                    </div> -->
+                    <br>
+                    <div class="col-lg-6">
+                        <form #registerMap="ngForm" (ngSubmit)="collectUserData(registerMap)" class="needs-validation" novalidate>
+                        
+                            <div class="row form-group">
+                                <div class="col-md-3" style="padding-top: 10px;">
+                                    <label for="pp" >Upload Profile Pic</label>
+                                </div>
+                               
+                                <div class="col-md-6">
+                                    <input type="file" (change)="onSelect($event)" name="pp" id="pp" class="form-control" ngModel>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your full name" ngModel required #name="ngModel">
+                                <span class="help-block" *ngIf="!name.valid && name.touched">Please enter your full name</span>
+                            </div>
+                         
+                          <div class="form-group">
+                            <input type="email" class="form-control" id="inputEmail3" name="email" placeholder="your email" ngModel required email #email="ngModel">
+                            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter valid email</span>
+                           
+                          </div>
+                          <div class="form-group">
+                            <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="your password" ngModel required #password="ngModel">
+                            <span class="help-block" *ngIf="!password.valid && password.touched">Please enter your password</span>
+                          </div>
+                          <div class="form-group">
+                            <select class="form-select form-select-md" name="gender" ngModel id=gender required #gender="ngModel">
+                            <option value="" selected>select your gender</option>
+                            <option value="MALE">Male</option>
+                            <option value="FEMALE">Female</option>
+                            </select>
+                            <span class="help-block" *ngIf="!gender.valid && gender.touched">Please select your gender</span>
+                          </div>
+                          <div class="form-group">
+                            <span>Select your profile</span>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="profile" ngModel
+                                id="gridRadios2" value="TEACHER" #teacher="ngModel" required>
+                                <label class="form-check-label" for="gridRadios1">
+                                  Teacher
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="profile" ngModel
+                                id="gridRadios2" value="STUDENT" #student="ngModel" required checked>
+                                <label class="form-check-label" for="gridRadios2">
+                                  Student
+                                </label>
+                              </div>
+                          </div>
+                          
+                          
+                          <div class="text-center"><button [disabled]="!registerMap.valid" type="submit" class="btn btn-primary">Register</button></div>
+                        </form>
+                      </div>
                 </tr>
 
                 <!-- if registraion is for teacher than it will show this section which include addTeacher component -->
