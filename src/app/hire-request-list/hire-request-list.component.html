@@ -1,8 +1,8 @@
 <!-- child component of admin component -->
 
-<ul *ngIf="studentTeacher">
-    <span *ngIf="noOfStudentTeacher < 1">No notifications</span>
-    <li *ngFor="let item of studentTeacher">
+<ul class="list-group" *ngIf="studentTeacher">
+    <span class="alert alert-primary" role="alert" *ngIf="noOfStudentTeacher < 1">No notifications</span>
+    <li class="list-group-item" *ngFor="let item of studentTeacher">
         <span>Job_id: {{item.id}} </span><br>
         <span>Student: {{item.student.studentName}} </span><br>
         <span>TeacherCourseId: {{item.teacherCourse.id}}</span><br>
