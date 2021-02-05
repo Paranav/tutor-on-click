@@ -14,10 +14,13 @@ import { compileComponentFromMetadata } from '@angular/compiler';
 import { TeacherDetailComponent } from './teacher-detail/teacher-detail.component';
 import { AuthGuard } from './services/auth.guard';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { TeacherAuthGuardService } from './services/auth-guard/teacher-auth-guard.service';
+import { LoginAuthGuardService } from './services/auth-guard/login-auth-guard.service';
+import { AdminAuthGuardService } from './services/auth-guard/admin-auth-guard.service';
 
 const routes: Routes = [
   {path:'', redirectTo:'dashboard', pathMatch:'full'},
-  {path:'admin', component:AdminComponent, canActivate:[AuthGuard]},
+  {path:'admin', component:AdminComponent, canActivate:[AdminAuthGuardService]},
   {path:'user', component:UserComponent, 
     children:[
       {path:'addStudent', component: AddStudentComponent},
@@ -26,9 +29,9 @@ const routes: Routes = [
       {path:'addTeacher', component: AddTeacherComponent},
       {path:'teacherList', component:TeacherListComponent}, 
     ], canActivate:[AuthGuard] },
-  {path:'teacher', component:TeacherDetailComponent, canActivate:[AuthGuard]},
+  {path:'teacher', component:TeacherDetailComponent, canActivate:[TeacherAuthGuardService]},
   {path:'dashboard', component:DashboardComponent},
-  {path:'login', component:LoginComponent},
+  {path:'login', component:LoginComponent, canActivate:[LoginAuthGuardService]},
   {path:'register', component:RegistrationComponent},
   {path:'contactUs', component:ContactUsComponent}
   //{path:'**', component:}
