@@ -20,7 +20,7 @@
 
 <!-- card to show the teachers -->
 <div *ngIf="showTeacherList">
-    <div class="card w-75" *ngFor="let item of teachers">
+    <div class="card w-75" *ngFor="let item of displayteachers">
         <div class="card-body">
             <h5 class="card-title">{{item.teacherName}}</h5>
             <b>Id:</b> {{item.id}} <b>Age:</b> {{item.age}} <b>Gender:</b> {{item.gender}}<br>
@@ -30,6 +30,8 @@
             <a (click)="hireTeacher(item.id)" class="btn btn-primary">Subscribe</a>
         </div>
     </div>
+     <button (click)="nextOnlist()">next</button>
+     <button (click)="previous()">previous</button>
 </div>
 
 <!-- child component hired Teacher List for the student -->

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { count } from 'console';
 import { StudentServiceService } from '../services/student-service.service';
 import { TeacherService } from '../services/teacher.service';
 
@@ -15,6 +16,8 @@ export class StudentDetailComponent implements OnInit {
   student:any;
   // store list of teacher for selected subj
   teachers:any;
+  displayteachers:any;
+  indexCount = 1;
   showHiredTeacher:any = false;
   showTeacherList:any = true;
   searcheSubject:String= new String();
@@ -39,9 +42,28 @@ export class StudentDetailComponent implements OnInit {
     this.searcheSubject = subject;
     
     this._teacherService.getTeachersBySubjectAndAdd(subject, this.student.location.state,this.student.location.city)
-          .subscribe(data=>this.teachers = data);
+          .subscribe(data=>{this.teachers = data;
+          this.displayteachers = [this.teachers[0], this.teachers[1]];
+          this.indexCount = 1;
+          });
           this.showTeacherList = true;
           this.showHiredTeacher = false;
+  }
+
+  nextOnlist(){
+    this.indexCount = this.indexCount+2;
+    this.displayteachers = [];
+    for(let i = this.indexCount-1; i<=this.indexCount && i<this.teachers.length; i++){
+      this.displayteachers.push(this.teachers[i]);
+    }
+  }
+
+  previous(){
+    this.indexCount = this.indexCount-4;
+    this.displayteachers = [];
+    for(let i = this.indexCount+1; i<=this.indexCount+2 && i>=0; i++){
+      this.displayteachers.push(this.teachers[i]);
+    }
   }
 
   // add teacher to student
