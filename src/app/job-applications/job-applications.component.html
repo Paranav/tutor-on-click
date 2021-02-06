@@ -1,21 +1,25 @@
  <!-- this is child component of student Detail component -->
+    <!-- <p class="alert alert-primary" role="alert" *ngIf="!teachers">No teachers</p> -->
     
     <ul class="list-group" *ngIf="teachers">
-        <span class="alert alert-primary" role="alert" *ngIf="listLength < 1">No job applications</span>
+        
         <li class="list-group-item" *ngFor="let item of teachers">
-            <span>{{item.teacherName}}</span>
-            <button (click)="confirmStatus(item.id)">Approve</button>
-            <button (click)="reject(item.id)">Reject</button>
+            <span class="font-weight-bold">{{item.teacherName}}</span>
+            <br><br>
+            <button class="btn btn-primary" (click)="confirmStatus(item.id)">Approve</button>
+            <button style="margin-left: 10px;" class="btn btn-primary" (click)="reject(item.id)">Reject</button>
         </li>
     </ul>
-    
+    <!-- <p class="alert alert-primary" role="alert" *ngIf="!teacherCourse">No Courses</p> -->
     <ul class="list-group" *ngIf="teacherCourse">
         <li class="list-group-item">
-            <span class="alert alert-primary" role="alert" *ngIf="listLength < 1">No job applications</span>
-            <span>Name: {{teacherCourse.teacher.teacherName}}</span>
+            
+            <span class="font-weight-bold">Name: {{teacherCourse.teacher.teacherName}}</span>
+            <br><br>
             <span>Ragistered Course:{{teacherCourse.course.courseName}}</span>
-            <button (click)=" confirmTeacherCourseStatus(teacherCourse.id)">Approve</button>
-            <button (click)="rejectTeacherCourse(teacherCourse.id)">Reject</button>
+            <br>
+            <button class="btn btn-primary" (click)=" confirmTeacherCourseStatus(teacherCourse.id)">Approve</button>
+            <button style="margin-left: 10px;" class="btn btn-primary" (click)="rejectTeacherCourse(teacherCourse.id)">Reject</button>
         </li>
     </ul>
 

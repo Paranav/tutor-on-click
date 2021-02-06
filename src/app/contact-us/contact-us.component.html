@@ -1,5 +1,5 @@
 <app-nav-bar></app-nav-bar>
-<div class="row" style="height: 500px;">
+<!-- <div class="row" style="height: 500px;">
     <div class="col-md-6 border" style="background-color: cadetblue;">
         <div class="container border pt-5" style="margin-top: 76px; background-color: rgb(146, 87, 200); box-shadow: rgba(0, 0, 0, 0.5); width: 700px;">
     <form #messageData="ngForm" (ngSubmit)="onSubmit(messageData)">
@@ -43,5 +43,38 @@
 </div>
     <div class="col-md-6 border" style="background-color: darkcyan;">somethis</div>
 
-</div>
+</div> -->
+
+<div class="container text-center">
+
+    <div class="row" style="margin-top:20px;margin-bottom: 50px;margin-left: 350px;">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form role="form"  #messageData="ngForm" (ngSubmit)="onSubmit(messageData)">
+                <fieldset>
+                    <h2>Contact Us</h2>
+                    <hr class="colorgraph">
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" class="form-control input-lg" placeholder="Name" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subject" id="subject" class="form-control input-lg" placeholder="Subject" ngModel>
+                    </div>
+                    <div class="form-group">
+                        <textarea type="text" name="body" id="body" class="form-control input-lg" placeholder="Enter your message" ngModel></textarea>
+                    </div>
+                    <hr class="colorgraph">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Submit">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    
+    </div>
 <app-footer></app-footer>
