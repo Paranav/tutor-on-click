@@ -39,7 +39,7 @@ export class HiredTeacherListComponent implements OnInit {
   removeTeacher(teacherId:String){
     this._teacherService.removeTeacherWhereTeacherId(teacherId, this.studentId)
          .subscribe(data=>this.teachers = <ITeacher[]>data);
-         this.noOfTeachers = this.teachers.length;
+    this.noOfTeachers = this.teachers.length;
   }
 
   

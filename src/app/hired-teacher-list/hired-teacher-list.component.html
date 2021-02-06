@@ -1,8 +1,8 @@
 <!-- child component of student Detail -->
 
-<ul>
-    <span *ngIf="noOfTeachers<1">No teachers hired</span>
-    <li *ngFor="let item of teachers">
+<ul class="list-group">
+    <span class="alert alert-primary" role="alert" *ngIf="noOfTeachers < 1">No teachers hired</span>
+    <li class="list-group-item" *ngFor="let item of teachers">
         
         <span>{{item.teacherName}}</span>
         <button (click)="removeTeacher(item.id)">Remove</button>

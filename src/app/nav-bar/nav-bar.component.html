@@ -47,19 +47,19 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="nav navbar-nav ml-auto">
         <li class="nav-item ">
-          <a class="nav-link" href="http://localhost:4200/dashboard">Home</a>
+          <a class="nav-link" routerLinkActive="active" routerLinkActiveOptions="{exact:true}" routerLink="/">Home</a>
         </li>
         <li class="nav-item " *ngIf="!loggedIn">
-          <a class="nav-link" href="http://localhost:4200/register">Register</a>
+          <a class="nav-link" routerLinkActive="active" routerLinkActiveOptions="{exact:true}" routerLink="/register">Register</a>
         </li>
-        <li class="nav-item active" *ngIf="!loggedIn">
-          <a class="nav-link" href="http://localhost:4200/login">Login</a>
+        <li class="nav-item" *ngIf="!loggedIn">
+          <a class="nav-link" routerLinkActive="active" routerLinkActiveOptions="{exact:true}" routerLink="/login">Login</a>
         </li>
         <li class="nav-item " *ngIf="loggedIn">
           <a class="nav-link" (click)="logOut()" style="cursor: pointer;">Logout</a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link" (click)="contactUs()">Contact Us</a>
+          <a class="nav-link" (click)="contactUs()" style="cursor: pointer;">Contact Us</a>
         </li>
       </ul>
     </div><!--/.nav-collapse -->
