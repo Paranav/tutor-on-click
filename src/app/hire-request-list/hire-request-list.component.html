@@ -1,11 +1,11 @@
 <!-- child component of admin component -->
 
 <ul class="list-group" *ngIf="studentTeacher">
-    <span class="alert alert-primary" role="alert" *ngIf="noOfStudentTeacher < 1">No notifications</span>
+    <span class="alert alert-primary" role="alert" *ngIf="(noOfStudentTeacher < 1)">No notifications</span>
     <li class="list-group-item" *ngFor="let item of studentTeacher">
-        <span>Job_id: {{item.id}} </span><br>
-        <span>Student: {{item.student.studentName}} </span><br>
-        <span>TeacherCourseId: {{item.teacherCourse.id}}</span><br>
-        <button (click)="conformStatus(item.id)"></button>
+        <span class="font-weight-bold">Job_id: {{item.id}} </span><br><br>
+        <span class="font-weight-bold">Student: {{item.student.studentName}} </span><br><br>
+        <span class="font-weight-bold">TeacherCourseId: {{item.teacherCourse.id}}</span><br><br>
+        <button class="btn btn-primary" (click)="conformStatus(item.id)">Confirm</button>
     </li>
 </ul>

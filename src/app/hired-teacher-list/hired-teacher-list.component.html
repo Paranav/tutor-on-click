@@ -1,12 +1,12 @@
 <!-- child component of student Detail -->
 
 <ul class="list-group">
-    <span class="alert alert-primary" role="alert" *ngIf="noOfTeachers < 1">No teachers hired</span>
+  
     <li class="list-group-item" *ngFor="let item of teachers">
         
-        <span>{{item.teacherName}}</span>
-        <button (click)="removeTeacher(item.id)">Remove</button>
+        <span class="font-weight-bold">{{item.teacherName}}</span><br><br>
+        <button class="btn btn-primary" (click)="removeTeacher(item.id)">Remove</button>
     </li>
 </ul>
 
-<button (click)="getfrestList()">Refresh</button>
+<button class="btn btn-primary" (click)="getfrestList()">Refresh</button>

@@ -6,16 +6,16 @@
                   <img [src]="imageData" height="260px" width="260px" style="border-radius: 130px;" >
               </div>
               <div *ngIf="teacher" class="box">
-                 <h3>Id: {{teacher[0].id}}</h3><h3>{{teacher[0].teacherName}}</h3>
-                 <h3>Per Hour Fee: {{teacher[0].perHourFees}}</h3>
-                 <h3>Current Rating: {{teacher[0].rate}}</h3>
-                 <h3>Joining Date: {{teacher[0].joiningDate}}</h3>
+                 <h4>Id: {{teacher[0].id}}</h4><h4>{{teacher[0].teacherName}}</h4>
+                 <h4>Per Hour Fee: {{teacher[0].perHourFees}}</h4>
+                 <h4>Current Rating: {{teacher[0].rate}}</h4>
+                 <h4>Joining Date: {{teacher[0].joiningDate}}</h4>
               </div>
             </div>
           <div class="col-sm-8">
             <div *ngIf="teacher[0].status; else elseBlock">
-                <div class="row" style="background-color:rgba(70, 195, 195, 0.863);">
-                  <div class="col-sm-6" style="justify-content: center; border-right: 1px solid black;">
+                <div class="row" >
+                  <!-- <div class="col-sm-6" style="justify-content: center; border-right: 1px solid black;">
                     <button (click)="studentList()"
                       style="border: none; background-color: transparent;  font-family : 'Roboto Mono', monospace; font-size: x-large;">Student List
                       </button>
@@ -24,7 +24,15 @@
                     <button (click)="studentListNewJob()"
                       style="border: none; background-color: transparent; font-family : 'Roboto Mono', monospace; font-size: x-large;">
                       New Job</button>
-                  </div>
+                  </div> -->
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <a (click)="studentList()" class="nav-link" routerLinkActive="active" id="studentList" data-bs-toggle="tab" role="tab" aria-controls="studentList" aria-selected="true" style="cursor: pointer;">Student List</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <a (click)="studentListNewJob()" class="nav-link" routerLinkActive="active" id="newJob" data-bs-toggle="tab" role="tab" aria-controls="newJob" aria-selected="false" style="cursor: pointer;">New Job</a>
+                    </li>
+                  </ul>
                 </div>
 
                 <!-- student list -->
@@ -36,7 +44,7 @@
                         <td>{{item.studentName}}</td>
                         <td>{{item.dob}}</td>
                         <td>{{item.email}}</td>
-                        <td><button (click)="studentDetail(item.id)">Detail</button></td>
+                        <td><button class="btn btn-primary" (click)="studentDetail(item.id)">Detail</button></td>
                       </tr>
                       </tbody>
                     </table>
@@ -51,7 +59,7 @@
                           <td>{{item.studentName}}</td>
                           <td>{{item.dob}}</td>
                           <td>{{item.email}}</td>
-                          <td><button (click)="studentDetail(item.id)">Detail</button></td>
+                          <td><button class="btn btn-primary" (click)="studentDetail(item.id)">Detail</button></td>
                         </tr>
                         </tbody>
                       </table>
