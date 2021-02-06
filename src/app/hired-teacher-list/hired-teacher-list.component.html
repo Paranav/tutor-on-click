@@ -4,8 +4,8 @@
     <span class="alert alert-primary" role="alert" *ngIf="noOfTeachers < 1">No teachers hired</span>
     <li class="list-group-item" *ngFor="let item of teachers">
         
-        <span>{{item.teacherName}}</span>&nbsp;
-        <button (click)="removeTeacher(item.id)" class="btn btn-warning">Remove</button>
+        <span>{{item.teacherName}}</span>
+        <button (click)="removeTeacher(item.id)">Remove</button>
     </li>
 </ul>
 

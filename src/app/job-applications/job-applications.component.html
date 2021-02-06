@@ -3,8 +3,8 @@
     <ul class="list-group" *ngIf="teachers">
         <span class="alert alert-primary" role="alert" *ngIf="listLength < 1">No job applications</span>
         <li class="list-group-item" *ngFor="let item of teachers">
-            <span>{{item.teacherName}}</span>&nbsp;&nbsp;
-            <button (click)="confirmStatus(item.id)">Approve</button>&nbsp;
+            <span>{{item.teacherName}}</span>
+            <button (click)="confirmStatus(item.id)">Approve</button>
             <button (click)="reject(item.id)">Reject</button>
         </li>
     </ul>
@@ -13,8 +13,8 @@
         <li class="list-group-item">
             <span class="alert alert-primary" role="alert" *ngIf="listLength < 1">No job applications</span>
             <span>Name: {{teacherCourse.teacher.teacherName}}</span>
-            <span>Ragistered Course:{{teacherCourse.course.courseName}}</span>&nbsp;&nbsp;
-            <button (click)=" confirmTeacherCourseStatus(teacherCourse.id)">Approve</button>&nbsp;
+            <span>Ragistered Course:{{teacherCourse.course.courseName}}</span>
+            <button (click)=" confirmTeacherCourseStatus(teacherCourse.id)">Approve</button>
             <button (click)="rejectTeacherCourse(teacherCourse.id)">Reject</button>
         </li>
     </ul>

@@ -2,7 +2,7 @@
 <ul class="list-group" *ngIf="teachers">
     <li class="list-group-item" *ngFor="let item of teachers">
     
-        <span>{{item.teacherName}}</span>&nbsp;&nbsp;
+        <span>{{item.teacherName}}</span>
         <button class="btn btn-primary" (click)="showTeacherDetail(item.id)">Detail</button>
     </li>
 
