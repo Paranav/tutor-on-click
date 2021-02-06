@@ -1,7 +1,7 @@
 <!-- child component of admin component -->
 
 <ul class="list-group" *ngIf="studentTeacher">
-    <span class="alert alert-primary" role="alert" *ngIf="(noOfStudentTeacher < 1)">No notifications</span>
+    <!-- <span class="alert alert-primary" role="alert" *ngIf="studentTeacher">No notifications</span> -->
     <li class="list-group-item" *ngFor="let item of studentTeacher">
         <span class="font-weight-bold">Job_id: {{item.id}} </span><br><br>
         <span class="font-weight-bold">Student: {{item.student.studentName}} </span><br><br>
